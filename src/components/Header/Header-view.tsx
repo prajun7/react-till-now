@@ -2,6 +2,8 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar'
 import { Typography, SxProps, Theme, Box } from '@mui/material';
+import Language from './components/Language/Language';
+import { useTranslation } from 'react-i18next';
 
 const sxToolbar: SxProps<Theme> = (theme) => ({
   display: 'grid',
@@ -20,11 +22,14 @@ const sxTitle: SxProps<Theme> = (theme) => ({
 });
 
 const HeaderView: React.FC = () => {
+  const { t } = useTranslation('Header');
+
   return (
     <>
         <AppBar>
           <Toolbar sx={sxToolbar}>
-            <Typography sx={sxTitle} noWrap>React Till Now</Typography>
+            <Typography sx={sxTitle} noWrap>{t('ReactTillNow')}</Typography>
+            <Language />
           </Toolbar>
         </AppBar>
     </>
