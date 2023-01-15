@@ -2,10 +2,10 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import raw from './translations/en.json';
 import esp from './translations/es.json';
+import Session from '../Session';
+import { SESSION_STORAGE_KEY as LanguageKey } from '../Language';
 
-let userLanguage = 'en';
-
-if (userLanguage.slice(0, 2) === 'es') userLanguage = 'es';
+let userLanguage = Session.get(LanguageKey)?.Language ?? 'en'
 
 const resources = {
   en: raw,
