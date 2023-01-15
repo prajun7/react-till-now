@@ -22,13 +22,13 @@ const sxTitle: SxProps<Theme> = (theme) => ({
 });
 
 const HeaderView: React.FC = () => {
-  const { t } = useTranslation('Header');
+  const { t } = useTranslation('App.Header');
 
   return (
     <>
         <AppBar>
           <Toolbar sx={sxToolbar}>
-            <Typography sx={sxTitle} noWrap>{t('ReactTillNow')}</Typography>
+            <Typography sx={sxTitle} noWrap>{t('Title')}</Typography>
             <Language />
           </Toolbar>
         </AppBar>

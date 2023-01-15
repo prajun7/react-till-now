@@ -1,5 +1,9 @@
 {
-    "Header" : {
-        "ReactTillNow": "React Till Now"
-    } 
+    "App.Header" : {
+        "Title": "React Till Now"
+    },
+    "App.Header.Language": {
+        "English": "English",
+        "Spanish": "Espanol"
+    }
 }
