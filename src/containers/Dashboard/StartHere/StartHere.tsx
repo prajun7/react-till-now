@@ -35,13 +35,18 @@ const StartHere: React.FC = () => {
         disabled: false,
       },
       {
-        tabName: isDesktop ? t('SignupFLow') : t('SignupFLowMobile'),
-        route: '/signup',
+        tabName: isDesktop ? t('Counter') : t('CounterMobile'),
+        route: '/counter',
         disabled: false,
       },
       {
         tabName: isDesktop ? t('CreateList') : t('CreateListMObile'),
         route: '/createlist',
+        disabled: false,
+      },
+      {
+        tabName: isDesktop ? t('SignupFLow') : t('SignupFLowMobile'),
+        route: '/signup',
         disabled: false,
       },
     ]

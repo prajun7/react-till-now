@@ -11,12 +11,16 @@ const Routes: Route[] = [
     element: (<>Home</>)
   },
   {
-    path: 'signup',
-    element: (<>Sign UP</>),
+    path: 'counter',
+    element: (<>Counter</>)
   },
   {
     path: 'createlist',
     element: (<>Create List</>),
+  },
+  {
+    path: 'signup',
+    element: (<>Sign UP</>),
   },
 ];
 
