@@ -5,5 +5,5 @@ export default {
          storeName: 'ReactTillNow-LOCALSTORAGE',
          keyPrefix: 'ReactTillNow_',
       },
-   }
+   },
 }
