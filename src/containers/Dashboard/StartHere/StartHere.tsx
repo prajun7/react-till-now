@@ -22,35 +22,34 @@ const sxContainer: SxProps<Theme> = (theme) => ({
 });
 
 const StartHere: React.FC = () => {
-  const { t } = useTranslation('App.Dashboard.Tabs');
+  const { t } = useTranslation('App.StartHere');
   const navigate = useNavigate();
   const location = useLocation();
-  const isDesktop = true;   // TODO : CHeck if we are in desktop or not
 
   const tabs = useMemo((): TabDetail[] => (
     [
       {
-        tabName: isDesktop ? t('Home') : t('HomeMobile'),
+        tabName: t('Home'),
         route: '/home',
         disabled: false,
       },
       {
-        tabName: isDesktop ? t('Counter') : t('CounterMobile'),
+        tabName: t('Counter'),
         route: '/counter',
         disabled: false,
       },
       {
-        tabName: isDesktop ? t('CreateList') : t('CreateListMObile'),
+        tabName: t('List'),
         route: '/createlist',
         disabled: false,
       },
       {
-        tabName: isDesktop ? t('SignupFLow') : t('SignupFLowMobile'),
+        tabName: t('Signup'),
         route: '/signup',
         disabled: false,
       },
     ]
-  ), [t, isDesktop]);
+  ), [t]);
 
   const loadTab = useCallback(() => {
     const tabIndex = tabs.findIndex(tab => location.pathname.includes(tab.route));
@@ -71,14 +70,13 @@ const StartHere: React.FC = () => {
         justifyContent="center"
         alignItems="center"
         direction="column"
-        rowSpacing={isDesktop ? 2 : 4}
+        rowSpacing={ 2 }
       >
         <Grid item>
-          <Box mt={isDesktop ? 6 : 0}>
+          <Box mt={ 6 }>
             <TabBar
               tabs={tabs}
               selectedTab={selectedTab}
-              isDesktop={isDesktop}
               onChange={onChangeTab}
             />
           </Box>

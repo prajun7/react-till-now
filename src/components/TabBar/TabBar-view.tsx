@@ -22,14 +22,12 @@ interface TabBarProps {
   tabs: TabDetail[];
   selectedTab: number;
   onChange: (value: number) => void;
-  isDesktop?: boolean;
 }
 
 const TabBar: React.FC<TabBarProps> = ({
   tabs,
   selectedTab,
   onChange,
-  isDesktop = true,
 }) => {
 
   return (
@@ -37,7 +35,7 @@ const TabBar: React.FC<TabBarProps> = ({
       sx={sxTabContainer}
       classes={{ indicator: 'grey' }}
       value={selectedTab}
-      variant={isDesktop ? 'standard' : 'scrollable'}
+      variant={'standard'}
       onChange={(_, value) => onChange(value)}
     >
       {tabs.filter(t => !t.disabled).map(t => (

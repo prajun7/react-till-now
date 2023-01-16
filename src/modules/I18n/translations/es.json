@@ -5,5 +5,11 @@
     "App.Header.Language": {
         "English": "English",
         "Spanish": "Espanol"
+    },
+    "App.StartHere": {
+        "Home": "Casa",
+        "Counter": "Contador",
+        "List": "Lista",
+        "Signup": "Registrarse"
     }
 }
