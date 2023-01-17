@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './Counter/counter-container';
 
 type Route = {
   path: string;
@@ -12,7 +13,7 @@ const Routes: Route[] = [
   },
   {
     path: 'counter',
-    element: (<>Counter</>)
+    element: (<Counter />)
   },
   {
     path: 'createlist',

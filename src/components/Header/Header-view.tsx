@@ -1,11 +1,11 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar'
-import { Typography, SxProps, Theme, Box } from '@mui/material';
+import { Typography, SxProps, Theme } from '@mui/material';
 import Language from './components/Language/Language';
 import { useTranslation } from 'react-i18next';
 
-const sxToolbar: SxProps<Theme> = (theme) => ({
+const sxToolbar: SxProps<Theme> = theme => ({
   display: 'grid',
   gridTemplateColumns: '1fr auto auto',
   justifyContent: 'space-between',
@@ -15,7 +15,7 @@ const sxToolbar: SxProps<Theme> = (theme) => ({
   },
 });
 
-const sxTitle: SxProps<Theme> = (theme) => ({
+const sxTitle: SxProps<Theme> = theme => ({
   [theme.breakpoints.down('md')]: {
     fontSize: theme.typography.caption.fontSize,
   },
