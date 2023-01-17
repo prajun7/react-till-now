@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from './Counter/counter-container';
+import Counter from './Counter';
 
 type Route = {
   path: string;

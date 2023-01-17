@@ -11,5 +11,9 @@
         "Counter": "Contador",
         "List": "Lista",
         "Signup": "Registrarse"
+    },
+    "App.StartHere.Counter": {
+      "HomeScore": "Marcador Local",
+      "AwayScore": "Marcador Visitante"
     }
 }

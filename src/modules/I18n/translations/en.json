@@ -1,15 +1,19 @@
 {
-    "App.Header" : {
-        "Title": "React Till Now"
-    },
-    "App.Header.Language": {
-        "English": "English",
-        "Spanish": "Espanol"
-    },
-    "App.StartHere": {
-        "Home": "Home",
-        "Counter": "Counter",
-        "List": "List",
-        "Signup": "Sign Up"
-    }
+  "App.Header" : {
+    "Title": "React Till Now"
+  },
+  "App.Header.Language": {
+    "English": "English",
+    "Spanish": "Espanol"
+  },
+  "App.StartHere": {
+    "Home": "Home",
+    "Counter": "Counter",
+    "List": "List",
+    "Signup": "Sign Up"
+  },
+  "App.StartHere.Counter": {
+    "HomeScore": "Home Score",
+    "AwayScore": "Away Score"
+  }
 }

@@ -14,7 +14,7 @@ const Counter: React.FC = () => {
 		setAwayScore(0);
 	}
 
-	return(
+	return (
 		<CounterView
 			homeScore={homeScore}
 			addHomeScore={addHomeScore}
