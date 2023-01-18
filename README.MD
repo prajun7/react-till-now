@@ -20,7 +20,7 @@ Using Vite + React + TS
 
 ## Get Started
 ```
-  git clone https://github.com/netzwerg/react-you-do-you.git
+  git clone https://github.com/prajun7/react-till-now
   cd react-till-now
   npm install
   npm run dev
