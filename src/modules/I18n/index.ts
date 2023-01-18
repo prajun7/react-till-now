@@ -5,7 +5,7 @@ import esp from './translations/es.json';
 import Session from '../Session';
 import { SESSION_STORAGE_KEY as LanguageKey } from '../Language';
 
-let userLanguage = Session.get(LanguageKey)?.Language ?? 'en'
+const userLanguage = Session.get(LanguageKey)?.Language ?? 'en'
 
 const resources = {
   en: raw,
