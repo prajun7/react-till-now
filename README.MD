@@ -35,3 +35,6 @@ Contributions are always welcome! If you have any ideas, suggestions, fixes, fee
 3. Make some changes
 4. Test your changes
 5. Push your branch and open a Pull Request
+
+## Responsive layout
+https://www.figma.com/file/sttsMB6tM2GemdGKJM11rY/React-till-now?node-id=0%3A1&t=BpO2MK2qe8MSBfzL-1
