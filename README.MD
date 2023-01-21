@@ -17,6 +17,7 @@ Using Vite + React + TS
 - Material UI
 - i18next
 - Eslint
+- [tss-react](https://github.com/garronej/tss-react)
 
 ## Get Started
 ```
