@@ -8,7 +8,7 @@ import i18n from '../../../../modules/I18n/index';
 import Session from '../../../../modules/Session';
 import { SESSION_STORAGE_KEY as LanguageKey } from '../../../../modules/Language';
 
-const sxButton: SxProps<Theme> = (theme) => ({
+const sxButton: SxProps<Theme> = theme => ({
   marginRight: 0,
   [theme.breakpoints.up('md')]: {
     marginRight: theme.spacing(2),

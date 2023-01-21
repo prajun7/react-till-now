@@ -1,15 +1,15 @@
 import React from 'react';
 import AppView from './App-view';
-import { 
-    Route, Routes, BrowserRouter 
+import {
+    Route, Routes, BrowserRouter
 } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
 const App: React.FC = () => (
     <BrowserRouter>
         <Routes>
-            <Route 
-                path="*" 
+            <Route
+                path="*"
                 element={
                 <ErrorBoundary onError={(error, info) => console.log(error, info)} fallback={<>Error Page</>}>
                     <AppView />
