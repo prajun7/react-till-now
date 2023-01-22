@@ -30,11 +30,11 @@ const useStyles = makeStyles()(
       filter: `drop-shadow(0px 5px 15px white)`,
     },
     arrow: {
-      transitionDuration: ["2s"],
+      transitionDuration: ["3s"],
     },
     arrowRotate: {
       transform: 'rotate(180deg)',
-      transitionDuration: ["2s"],
+      transitionDuration: ["3s"],
     },
     iconButton: {
       padding: 0,
@@ -63,7 +63,7 @@ const SideBarMobile: React.FC<SideBarMobileProps> = ({ toggleCollapse, collapseS
         <SideBarRow
           onClick={toggleCollapse}
           title={"MY NAME1"}
-          selected={false}
+          selected={true}
           visited={true}
           alert={"warning"}
           linked={true}

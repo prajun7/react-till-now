@@ -1,25 +1,62 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Header } from '../../components';
+import {
+  Route, Routes, useNavigate, useLocation, matchPath,
+} from 'react-router-dom';
 import { StartHere } from './StartHere';
+import Home from '../Home';
 import SideBar from '../../components/SideBar/SideBar-container';
+
+type route = {
+  path: string;
+  component: React.FC<object>;
+  exact: boolean;
+  variant: 'full' | 'sidebar' | undefined
+};
 
 const DashboardApp: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    // TODO: seems hacky, try useMatch or something,
-    if (location.pathname === '/') {
-      navigate('/home');
+  const routes: route[] = [
+    {
+      path: '/react-till-now/',
+      component: Home,
+      exact: true,
+      variant: 'sidebar',
+    },
+    {
+      path: '/react-till-now/starthere',
+      component: StartHere,
+      exact: true,
+      variant: 'sidebar',
     }
-  }, [location.pathname, navigate]);
+  ];
+
+  // useEffect(() => {
+  //   // TODO: seems hacky, try useMatch or something,
+  //   if (location.pathname === '/') {
+  //     navigate('/');
+  //   }
+  // }, [location.pathname, navigate]);
+
+  const currentRoute = routes.find(
+    route => matchPath(route, location.pathname),
+  );
+  console.log(currentRoute);
+    console.log(location.pathname);
 
   return (
     <>
-      <Header />
-      <SideBar variant='sidebar'>
-        <StartHere />
+      <SideBar variant={currentRoute?.variant}>
+        <Routes>
+            {routes.map(route => (
+              <Route
+                key={route.path}
+                {...route}
+              />
+            ))}
+        </Routes>
+        {/* <StartHere /> */}
       </SideBar>
     </>
   );

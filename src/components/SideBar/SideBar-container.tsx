@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  Box, Grid, Container,
+  Box, Grid, Container,  useMediaQuery, useTheme,
 } from '@mui/material';
 import { makeStyles } from "tss-react/mui";
 import classNames from 'classnames';
 import SidebarView from './SideBar-view';
+import { Header } from '../../components';
 
 const useStyles = makeStyles()(
   theme => ({
@@ -30,19 +31,19 @@ const useStyles = makeStyles()(
 }));
 
 interface SideBarProps {
-  variant: 'sidebar'| 'full',
+  variant: 'sidebar' | 'full' | undefined,
   children: any,
 }
 
 interface ScreenBodyProps {
-  variant: 'sidebar'| 'full',
-  isMobile: boolean,
+  variant: 'sidebar' | 'full' | undefined,
+  isDesktop: boolean,
   children: any,
 }
 
 const ScreenBody: React.FC<ScreenBodyProps> = ({
-  variant="full",
-  isMobile=false,
+  variant,
+  isDesktop,
   children
 }) => {
   const { classes } = useStyles();
@@ -57,10 +58,10 @@ const ScreenBody: React.FC<ScreenBodyProps> = ({
 
   return (
     <>
-      <SidebarView />
+      <SidebarView isDesktop={isDesktop}/>
       <Box className={classNames(classes.content, classes.shift)}>
         <Container maxWidth="lg">
-          <Grid container spacing={isMobile ? 2 : 4}>
+          <Grid container spacing={isDesktop ? 4 : 2}>
             {children}
           </Grid>
         </Container>
@@ -69,12 +70,17 @@ const ScreenBody: React.FC<ScreenBodyProps> = ({
   );
 };
 
-const SideBar: React.FC<SideBarProps> = ({ variant, children }) => {
-  const isMobile = false;
+const SideBar: React.FC<SideBarProps> = ({
+  variant='full',
+  children
+}) => {
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <>
-      <ScreenBody variant={variant} isMobile={isMobile}>
+      <Header />
+      <ScreenBody variant={variant} isDesktop={isDesktop}>
         {children}
       </ScreenBody>
     </>
