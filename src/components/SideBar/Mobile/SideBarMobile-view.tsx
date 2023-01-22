@@ -43,35 +43,38 @@ const useStyles = makeStyles()(
   })
 )
 
+interface SideBarMobileProps {
+  toggleCollapse : () => void;
+  collapseState : boolean;
+}
 
-const SideBarMobile: React.FC = () => {
+const SideBarMobile: React.FC<SideBarMobileProps> = ({ toggleCollapse, collapseState }) => {
   const { classes } = useStyles();
-  const collapseState = true;
 
   return (
     <Box className={classes.switchContainer}>
       <Collapse in={collapseState} style={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
         <Box textAlign="center">
-          ACCOUNT HEADER
+          HEADER
         </Box>
       </Collapse>
       <Collapse in={!collapseState} style={{ width: '100%' }}>
         <Box mt={1}>
         <SideBarRow
-              onClick={() => console.log("Click SIdeBar Mobile")}
-              title={"MY NAME1"}
-              selected={false}
-              visited={true}
-              alert={"warning"}
-              linked={true}
-            />
+          onClick={toggleCollapse}
+          title={"MY NAME1"}
+          selected={false}
+          visited={true}
+          alert={"warning"}
+          linked={true}
+        />
         </Box>
         <Box py={2} position="relative">
           <Divider />
         </Box>
         <Box>
           <SideBarRow
-            onClick={() => console.log("Click SIdeBar Mobile")}
+            onClick={toggleCollapse}
             title={"MY NAME2"}
             key={100}
             selected={true}
@@ -81,7 +84,7 @@ const SideBarMobile: React.FC = () => {
           />
         </Box>
       </Collapse>
-      <IconButton onClick={() => console.log('Click mobile')} className={classes.iconButton}>
+      <IconButton onClick={toggleCollapse} className={classes.iconButton}>
         <ExpandMore className={collapseState ? classes.arrow : classes.arrowRotate}></ExpandMore>
       </IconButton>
     </Box>

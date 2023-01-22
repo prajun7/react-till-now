@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   useMediaQuery,
   useTheme,
@@ -10,9 +10,17 @@ const SidebarView: React.FC = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
+  const [mobileCollapseState, setMobileCollapseState] = useState(true);
+  const toggleCollapse = () => { setMobileCollapseState(!mobileCollapseState); };
+
+  console.log('in sidebar view', mobileCollapseState);
+
   if (!isDesktop) {
     return (
-      <SideBarMobile />
+      <SideBarMobile
+        toggleCollapse={toggleCollapse}
+        collapseState={mobileCollapseState}
+      />
     );
   }
 
