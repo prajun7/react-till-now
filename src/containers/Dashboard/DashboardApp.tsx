@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Header } from '../../components';
 import { StartHere } from './StartHere';
+import SideBar from '../../components/SideBar/SideBar-container';
 
 const DashboardApp: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    // TODO: seems hacky, try useMatch or something, 
+    // TODO: seems hacky, try useMatch or something,
     if (location.pathname === '/') {
       navigate('/home');
     }
@@ -17,7 +18,9 @@ const DashboardApp: React.FC = () => {
   return (
     <>
       <Header />
-      <StartHere />
+      <SideBar variant='sidebar'>
+        <StartHere />
+      </SideBar>
     </>
   );
 };
